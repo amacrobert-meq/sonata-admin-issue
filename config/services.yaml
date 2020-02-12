@@ -25,3 +25,15 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    admin.client:
+        class: App\Admin\ClientAdmin
+        arguments: [~, App\Entity\Client, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Client }
+
+    admin.communication:
+        class: App\Admin\CommunicationAdmin
+        arguments: [~, App\Entity\Communication, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Communication }

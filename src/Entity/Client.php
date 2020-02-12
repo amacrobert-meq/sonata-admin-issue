@@ -24,7 +24,7 @@ class Client
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Communication", mappedBy="client")
+     * @ORM\OneToMany(targetEntity="App\Entity\Communication", mappedBy="client", cascade="persist")
      */
     private $communications;
 
